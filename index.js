@@ -13,6 +13,10 @@ app.use(cors());
 
 const PORT = process.env.PORT || 8080;
 
+app.get("/", (req, res) => {
+    res.send("Hello from Dialogflow Webhook");  
+});
+
 app.post("/webhook", async (req, res) => {
     var id = res.req.body.session.substr(43);
     console.log(id);
